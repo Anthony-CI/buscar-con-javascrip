@@ -1,0 +1,31 @@
+﻿
+@{
+    Layout = null;
+    ViewData["Title"] = "Mostar";
+
+}
+
+
+<table id="Tabla" class="table">
+
+    <tbody>
+
+        @foreach (var tema in Model)
+        {
+            <tr>
+                <td>@tema.Id</td>
+                <td>@tema.Titulo</td>
+                <td>@tema.Categoria.Nombre</td>
+                <td>
+                    <a href="/Tema/Eliminar?id=@tema.Id">Eliminar</a>
+                    <a href="/Tema/Editar?id=@tema.Id">Editar</a>
+                </td>
+                <td>
+                    <a href="/Pregunta/index?temaId=@tema.Id">Preguntas</a>
+
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+

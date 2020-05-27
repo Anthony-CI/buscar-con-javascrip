@@ -1,0 +1,22 @@
+﻿
+@{
+    
+}
+
+<h1>AgregarPregunta</h1>
+
+<form action="/Pregunta/Crear" method="post">
+    <input type="hidden" name="TemaId" value="@ViewBag.TemaId" />
+
+    <div class="form-group">
+        <label>Descripcion</label>
+        <textarea class="form-control" rows="3" name="Descripcion"></textarea>
+    </div>
+    <div class="form-group">
+        <button class="btn btn-primary">Guardar</button>
+    </div>
+    <div class="form-group">
+        <a class="btn btn-primary" href="/Pregunta/Index?temaId=@ViewBag.TemaId" >Cancelar</a>
+    </div>
+</form>
+

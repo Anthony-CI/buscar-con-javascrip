@@ -1,0 +1,33 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Examenes</h1>
+<a class="btn btn-primary" href="/Examen/Crear" role="button">Crear</a>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Tema</th>
+            <th scope="col">Fecha Registro</th>
+            
+
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach (var examen in Model)
+        {
+        <tr>
+            <td>@examen.Id</td>
+
+            <td>@examen.Tema.Titulo</td>
+            
+            <td>@examen.FechaRegistro</td>
+            
+        </tr>
+        }
+    </tbody>
+</table>
+

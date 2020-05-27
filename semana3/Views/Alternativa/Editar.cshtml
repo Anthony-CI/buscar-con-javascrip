@@ -1,0 +1,37 @@
+﻿
+@{
+    ViewData["Title"] = "Editar";
+}
+
+<h1>Editar</h1>
+<h2>@ViewBag.Pregunta.Descripcion</h2>
+
+
+
+<form action="/Alternativa/Editar" method="post">
+
+    <input type="hidden" name="Id" value="@Model.Id" />
+    
+    <input type="hidden" name="temaId" value="@ViewBag.Pregunta.TemaId" />
+
+    <input type="hidden" name="PreguntaId" value="@Model.PreguntaId" />
+
+    <div class="form-group">
+        <label class="control-label">Alternativa</label>
+        <textarea class="form-control" name="Resumen">@Model.Resumen</textarea>
+    </div>
+
+    <div class="checkbox">
+        <label>
+
+            @*<input type="checkbox" value="true" name="EsCorrecto"> Es correcto*@
+
+            <input type="checkbox" value="true" name="EsCorrecto">@Model.EsCorrecto
+        </label>
+    </div>
+
+    <button class="btn btn-primary">Guardar</button>
+</form>
+
+
+

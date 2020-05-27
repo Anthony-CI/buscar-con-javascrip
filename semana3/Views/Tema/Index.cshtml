@@ -1,0 +1,59 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+
+@*<a href="/Tema/Crear">Crear</a>*@
+
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/js/main.js"></script>
+
+<div>
+    <form action="/tema" method="get">
+        <div>
+            <input  id="buscar"   value="@ViewBag.Query" autofocus name="query" placeholder="Buscar" />
+        </div>
+    </form>
+</div>
+<div>
+    <a class="btn btn-primary" href="/Tema/Crear" role="button">Crear</a>
+</div>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Titulo</th>
+            <th scope="col">Categoria</th>
+            <th scope="col">Opciones</th>
+            <th scope="col">Preguntas</th>
+
+        </tr>
+    </thead>
+
+
+    @*<tbody id="cuerpo">
+        </tbody>*@
+    <tbody id="cuerpo">
+
+        @foreach (var tema in Model)
+        {
+            <tr>
+                <td>@tema.Id</td>
+                <td>@tema.Titulo</td>
+                <td>@tema.Categoria.Nombre</td>
+                <td>
+                    <a href="/Tema/Eliminar?id=@tema.Id">Eliminar</a>
+                    <a href="/Tema/Editar?id=@tema.Id">Editar</a>
+                </td>
+                <td>
+                    <a href="/Pregunta/index?temaId=@tema.Id">Preguntas</a>
+
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+

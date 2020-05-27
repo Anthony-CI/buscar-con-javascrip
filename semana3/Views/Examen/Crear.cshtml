@@ -1,0 +1,40 @@
+﻿
+@{
+    ViewData["Title"] = "Crear";
+}
+
+<h1>Crear Examen</h1>
+
+<form action="/Examen/Crear" method="post">
+
+
+    <div class="form-group">
+        <label>Tema</label>
+        <select class="form-control" name="TemaId">
+            <option value="value">Seleccione Tema</option>
+            @foreach (var item in ViewBag.Tema)
+            {
+                if (item.Id == Model.TemaId)
+                {
+                    <option selected value="@item.Id">@item.Titulo</option>
+                }
+                else
+                {
+                    <option value="@item.Id">@item.Titulo</option>
+                }
+
+            }
+        </select>
+        @Html.ValidationMessage("TemaId")
+    <label>FechaRegistro</label>
+        <input type="text" name="FechaRegistro" value="" />
+    </div>
+
+    <div class="form-group">
+        <button class="btn btn-primary">Guardar</button>
+    </div>
+    <div class="form-group">
+        <a class="btn btn-primary" href="/Examen/Index">Cancelar</a>
+    </div>
+</form>
+

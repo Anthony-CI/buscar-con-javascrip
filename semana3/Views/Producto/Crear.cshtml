@@ -1,0 +1,22 @@
+﻿
+@{
+    Layout = null;
+}
+
+<h1>Crear</h1>
+
+<form action="/producto/Crear" method="post">
+
+    <label>Nombre</label>
+    <input type="text" name="Nombre" value="" />
+    @Html.ValidationMessage("Nombre");
+    <label>Categoria</label>
+    <input type="text" name="Categoria" value="" />
+    @Html.ValidationMessage("Categoria");
+    <label>FechaCreacion</label>
+    <input type="text" name="FechaCreacion" value="" />
+    @Html.ValidationMessage("FechaCreacion");
+    <button>Guardar</button>
+
+</form>
+

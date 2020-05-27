@@ -1,0 +1,14 @@
+﻿
+@{
+    Layout = null;
+}
+
+<h1>Editar</h1>
+<form action="/home/editar" method="post">
+    <label>Usuario</label>
+    <input type="hidden" name="Id" value="@Model.Id" />
+    <input type="text" name="NombreUsuario" value="@Model.NombreUsuario" />
+    <button>Guardar</button>
+
+</form>
+
